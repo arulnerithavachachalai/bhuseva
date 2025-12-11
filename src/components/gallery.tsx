@@ -65,7 +65,7 @@ function ImageCarousel({ images }: { images: ImagePlaceholder[] }) {
 
   return (
     <div>
-      <Carousel setApi={setApi} className="w-full max-w-[90%] mx-auto" opts={{ loop: true }}>
+      <Carousel setApi={setApi} className="w-full max-w-[95%] mx-auto" opts={{ loop: true }}>
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
