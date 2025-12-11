@@ -29,7 +29,7 @@ type GalleryProps = {
 };
 
 const galleryTabs = [
-  { id: 'arulneri', label: 'Arulneri', icon: Camera, imagesKey: 'arulneriImages', descriptionKey: 'arulneriDescription' },
+  { id: 'arulneri', label: 'Arulneri Thavachchalai', icon: Camera, imagesKey: 'arulneriImages', descriptionKey: 'arulneriDescription' },
   { id: 'annadhanam', label: 'Nithya Annadhanam', icon: Utensils, imagesKey: 'annadhanamImages', descriptionKey: 'annadhanamDescription' },
   { id: 'saplings', label: 'Sapling Distribution', icon: Sprout, imagesKey: 'saplingImages', descriptionKey: 'saplingDescription' },
 ] as const;
