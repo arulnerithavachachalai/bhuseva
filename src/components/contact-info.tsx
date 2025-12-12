@@ -14,6 +14,10 @@ export function ContactInfo({ address, contact }: ContactInfoProps) {
   const ashramAddress = addresses[0]?.trim() || '';
   const annadhanamAddress = addresses[1]?.trim() || '';
 
+  // Placeholder links - update with actual Google Maps or location URLs
+  const ashramLink = "https://maps.google.com/?q=Arulneri+Thavachchalai+Saptur+Tamil+Nadu";
+  const annadhanamLink = "https://maps.google.com/?q=Bhuseva+Nithya+Annadanam+Tiruvannamalai+Tamil+Nadu";
+
   return (
     <div className="w-full mx-auto animate-in fade-in-0 zoom-in-95 duration-500">
       <Card className="shadow-lg">
@@ -26,14 +30,18 @@ export function ContactInfo({ address, contact }: ContactInfoProps) {
               <MapPin className="h-8 w-8 text-primary" />
               <h3 className="ml-2 text-lg font-semibold font-headline">Ashram Address</h3>
             </div>
-            <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center">{ashramAddress}</p>
+            <a href={ashramLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground whitespace-pre-wrap text-sm text-center hover:text-primary hover:underline block">
+              {ashramAddress}
+            </a>
           </div>
           <div className="space-y-2">
             <div className="flex justify-center items-center">
               <MapPin className="h-8 w-8 text-primary" />
               <h3 className="ml-2 text-lg font-semibold font-headline">Annadhanam & Sapling</h3>
             </div>
-            <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center">{annadhanamAddress}</p>
+            <a href={annadhanamLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground whitespace-pre-wrap text-sm text-center hover:text-primary hover:underline block">
+              {annadhanamAddress}
+            </a>
           </div>
           <div className="space-y-2">
             <div className="flex justify-center items-center">
