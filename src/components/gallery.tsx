@@ -38,6 +38,7 @@ function ImageCarousel({ images }: { images: ImagePlaceholder[] }) {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
   const [count, setCount] = React.useState(0)
+  const [isHovered, setIsHovered] = React.useState(false)
 
   React.useEffect(() => {
     if (!api) {
@@ -52,19 +53,22 @@ function ImageCarousel({ images }: { images: ImagePlaceholder[] }) {
     })
   }, [api])
 
-  // Auto-rotate carousel every 5 seconds
+  // Auto-rotate carousel every 3 seconds, pause on hover
   React.useEffect(() => {
-    if (!api) return
+    if (!api || isHovered) return
 
     const interval = setInterval(() => {
       api.scrollNext()
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [api])
+  }, [api, isHovered])
 
   return (
-    <div>
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <Carousel setApi={setApi} className="w-full max-w-[95%] mx-auto" opts={{ loop: true }}>
         <CarouselContent>
           {images.map((image, index) => (
