@@ -22,6 +22,9 @@ export function Dashboard() {
             <Link href="#about">About Us</Link>
           </Button>
           <Button variant="ghost" asChild className="bg-saffron-100 text-saffron-900 hover:bg-saffron-100/80">
+            <Link href="#board">Board of Trustees</Link>
+          </Button>
+          <Button variant="ghost" asChild className="bg-saffron-100 text-saffron-900 hover:bg-saffron-100/80">
             <Link href="#contact">Contact Us</Link>
           </Button>
         </nav>

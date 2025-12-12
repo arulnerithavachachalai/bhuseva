@@ -4,6 +4,7 @@ import { ContactInfo } from '@/components/contact-info';
 import { Gallery } from '@/components/gallery';
 import { Dashboard } from '@/components/dashboard';
 import { AboutUs } from '@/components/about-us';
+import { BoardOfTrustees } from '@/components/board-of-trustees';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -67,6 +68,8 @@ export default async function Home() {
         />
 
         <AboutUs content={aboutDescription} />
+
+        <BoardOfTrustees />
 
         <section id="contact" className="mt-12">
           <ContactInfo address={address} contact={contact} />

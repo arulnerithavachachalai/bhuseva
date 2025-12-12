@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Bhu Seva Public Charitable Trust',
+  title: 'Bhuseva Public Charitable Trust',
   description: 'Image gallery for Bhu Seva Public Charitable Trust activities.',
 };
 
