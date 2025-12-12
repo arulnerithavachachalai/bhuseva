@@ -78,6 +78,10 @@ export function ContactInfo({ address, contact }: ContactInfoProps) {
                   />
                 </div>
               </div>
+
+              {/* Name Section - Second */}
+              <p className="text-lg font-bold text-center">Mr. Anand Swamy Ramana Bodhi</p>
+
               {/* Contact Details - Third */}
               <div className="text-muted-foreground text-sm text-center space-y-3">
                 {contact.split('\n').map((line, i) => (
