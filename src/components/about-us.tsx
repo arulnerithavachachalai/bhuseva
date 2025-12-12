@@ -25,11 +25,14 @@ export function AboutUs({ content }: AboutUsProps) {
             <CardTitle className="text-center font-headline text-3xl">OUR OBJECTIVES</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-muted-foreground text-center whitespace-pre-wrap leading-relaxed mb-6">
-              {firstFourLines}
-              {isExpanded && remainingLines && (
-                <div className="mt-4">{remainingLines}</div>
-              )}
+            <div className="text-muted-foreground text-left leading-relaxed mb-6">
+              <ol className="list-decimal list-inside space-y-2">
+                {(isExpanded ? lines : lines.slice(0, 4)).map((line, index) => (
+                  <li key={index} className="text-base">
+                    {line.replace(/^\d+\.\s/, '')}
+                  </li>
+                ))}
+              </ol>
             </div>
             {hasMoreContent && (
               <div className="flex justify-center pt-4">
