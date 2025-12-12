@@ -3,6 +3,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ContactInfo } from '@/components/contact-info';
 import { Gallery } from '@/components/gallery';
 import { Dashboard } from '@/components/dashboard';
+import { AboutUs } from '@/components/about-us';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -65,18 +66,7 @@ export default async function Home() {
           saplingDescription={saplingsDescription}
         />
 
-        <section id="about" className="mt-12">
-          <div className="max-w-4xl mx-auto animate-in fade-in-0 zoom-in-95 duration-500">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-center font-headline">About Us</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">{aboutDescription}</p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        <AboutUs content={aboutDescription} />
 
         <section id="contact" className="mt-12">
           <ContactInfo address={address} contact={contact} />
