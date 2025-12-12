@@ -10,7 +10,7 @@ export function Dashboard() {
           <Logo />
           <div>
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground font-headline">
-              Bhu Seva Public Charitable Trust
+              Bhuseva Public Charitable Trust
             </h1>
             <p className="text-sm text-muted-foreground hidden md:block">
               Serving Humanity, Nurturing Nature
