@@ -36,11 +36,11 @@ export function Donations() {
             <div className="bg-primary/5 rounded-lg p-6 space-y-4 border border-primary/20">
               <div>
                 <p className="text-sm font-semibold text-primary mb-2">UPI ID:</p>
-                <div className="flex items-center justify-between bg-white p-3 rounded border border-primary/10">
-                  <p className="text-base font-mono flex-1">{upiId}</p>
+                <div className="flex items-center justify-between bg-white p-3 rounded border border-primary/10 gap-2">
+                  <p className="text-base font-mono flex-1 break-all text-xs sm:text-base">{upiId}</p>
                   <button
                     onClick={() => copyToClipboard(upiId, 'upi-id')}
-                    className="ml-2 p-2 hover:bg-primary/10 rounded transition-colors"
+                    className="ml-2 p-2 hover:bg-primary/10 rounded transition-colors flex-shrink-0"
                     title="Copy UPI ID"
                   >
                     {copiedId === 'upi-id' ? (
@@ -54,11 +54,11 @@ export function Donations() {
 
               <div>
                 <p className="text-sm font-semibold text-primary mb-2">UPI Number:</p>
-                <div className="flex items-center justify-between bg-white p-3 rounded border border-primary/10">
-                  <p className="text-base font-mono flex-1">{upiNumber}</p>
+                <div className="flex items-center justify-between bg-white p-3 rounded border border-primary/10 gap-2">
+                  <p className="text-base font-mono flex-1 break-all text-xs sm:text-base">{upiNumber}</p>
                   <button
                     onClick={() => copyToClipboard(upiNumber, 'upi-number')}
-                    className="ml-2 p-2 hover:bg-primary/10 rounded transition-colors"
+                    className="ml-2 p-2 hover:bg-primary/10 rounded transition-colors flex-shrink-0"
                     title="Copy UPI Number"
                   >
                     {copiedId === 'upi-number' ? (
