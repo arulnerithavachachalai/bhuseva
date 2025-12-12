@@ -5,6 +5,7 @@ import { Gallery } from '@/components/gallery';
 import { Dashboard } from '@/components/dashboard';
 import { AboutUs } from '@/components/about-us';
 import { BoardOfTrustees } from '@/components/board-of-trustees';
+import { Donations } from '@/components/donations';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -74,6 +75,8 @@ export default async function Home() {
         <section id="contact" className="mt-12">
           <ContactInfo address={address} contact={contact} />
         </section>
+
+        <Donations />
       </main>
       <footer className="py-8 mt-12 border-t">
         <div className="container mx-auto text-center text-muted-foreground">
