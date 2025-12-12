@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MapPin, Phone } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 type ContactInfoProps = {
   address: string;
@@ -22,35 +22,58 @@ export function ContactInfo({ address, contact }: ContactInfoProps) {
     <div className="w-full mx-auto animate-in fade-in-0 zoom-in-95 duration-500">
       <Card className="shadow-lg">
         <CardHeader>
-          <CardTitle className="text-center font-headline">Get in Touch</CardTitle>
+          <CardTitle className="text-center font-headline text-3xl">Get in Touch</CardTitle>
         </CardHeader>
         <CardContent className="grid md:grid-cols-3 gap-8">
-          <div className="space-y-2">
-            <div className="flex justify-center items-center">
-              <MapPin className="h-8 w-8 text-primary" />
-              <h3 className="ml-2 text-lg font-semibold font-headline">Ashram Address</h3>
+          {/* Ashram Address Column */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-center gap-2">
+              <MapPin className="h-6 w-6 text-primary" />
+              <h3 className="text-xl font-semibold font-headline">Ashram Address</h3>
             </div>
-            <a href={ashramLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground whitespace-pre-wrap text-sm text-center hover:text-primary hover:underline block">
+            <div className="flex justify-center">
+              <a href={ashramLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-semibold inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4" />
+                Click Here - Open Google Maps
+              </a>
+            </div>
+            <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center leading-relaxed">
               {ashramAddress}
-            </a>
+            </p>
           </div>
-          <div className="space-y-2">
-            <div className="flex justify-center items-center">
-              <MapPin className="h-8 w-8 text-primary" />
-              <h3 className="ml-2 text-lg font-semibold font-headline">Annadhanam & Sapling</h3>
+
+          {/* Annadhanam & Sapling Column */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-center gap-2">
+              <MapPin className="h-6 w-6 text-primary" />
+              <h3 className="text-xl font-semibold font-headline">Nithya Annadhanam & Sapling Distribution</h3>
             </div>
-            <a href={annadhanamLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground whitespace-pre-wrap text-sm text-center hover:text-primary hover:underline block">
+            <div className="flex justify-center">
+              <a href={annadhanamLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-semibold inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4" />
+                Click Here - Open Google Maps
+              </a>
+            </div>
+            <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center leading-relaxed">
               {annadhanamAddress}
-            </a>
+            </p>
           </div>
-          <div className="space-y-2">
-            <div className="flex justify-center items-center">
-              <Phone className="h-8 w-8 text-primary" />
-              <h3 className="ml-2 text-lg font-semibold font-headline">Contact Us</h3>
+
+          {/* Contact Us Column */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-center gap-2">
+              <Phone className="h-6 w-6 text-primary" />
+              <h3 className="text-xl font-semibold font-headline">Contact Us</h3>
             </div>
-            <div className="text-muted-foreground whitespace-pre-wrap text-sm text-center">
+            <div className="text-muted-foreground text-sm text-center space-y-3">
               {contact.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
+                line.trim() && (
+                  <p key={i} className="flex items-center justify-center gap-2">
+                    {line.includes('Phone') && <Phone className="h-4 w-4 text-primary flex-shrink-0" />}
+                    {line.includes('Email') && <Mail className="h-4 w-4 text-primary flex-shrink-0" />}
+                    <span>{line}</span>
+                  </p>
+                )
               ))}
             </div>
           </div>
