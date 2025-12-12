@@ -24,57 +24,72 @@ export function ContactInfo({ address, contact }: ContactInfoProps) {
         <CardHeader>
           <CardTitle className="text-center font-headline text-3xl">Get in Touch</CardTitle>
         </CardHeader>
-        <CardContent className="grid md:grid-cols-3 gap-8">
-          {/* Ashram Address Column */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-center gap-2">
-              <MapPin className="h-6 w-6 text-primary" />
-              <h3 className="text-xl font-semibold font-headline">Ashram Address</h3>
+        <CardContent className="space-y-8">
+          {/* Three Column Layout */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Ashram Address Column */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <MapPin className="h-6 w-6 text-primary" />
+                <h3 className="text-xl font-semibold font-headline">Ashram Address</h3>
+              </div>
+              <div className="flex justify-center">
+                <a href={ashramLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-semibold inline-flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  Click Here - Open Google Maps
+                </a>
+              </div>
+              <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center leading-relaxed">
+                {ashramAddress}
+              </p>
             </div>
-            <div className="flex justify-center">
-              <a href={ashramLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-semibold inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                Click Here - Open Google Maps
-              </a>
-            </div>
-            <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center leading-relaxed">
-              {ashramAddress}
-            </p>
-          </div>
 
-          {/* Annadhanam & Sapling Column */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-center gap-2">
-              <MapPin className="h-6 w-6 text-primary" />
-              <h3 className="text-xl font-semibold font-headline">Nithya Annadhanam & Sapling Distribution</h3>
+            {/* Annadhanam & Sapling Column */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <MapPin className="h-6 w-6 text-primary" />
+                <h3 className="text-xl font-semibold font-headline">Nithya Annadhanam & Sapling Distribution</h3>
+              </div>
+              <div className="flex justify-center">
+                <a href={annadhanamLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-semibold inline-flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  Click Here - Open Google Maps
+                </a>
+              </div>
+              <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center leading-relaxed">
+                {annadhanamAddress}
+              </p>
             </div>
-            <div className="flex justify-center">
-              <a href={annadhanamLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-semibold inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                Click Here - Open Google Maps
-              </a>
-            </div>
-            <p className="text-muted-foreground whitespace-pre-wrap text-sm text-center leading-relaxed">
-              {annadhanamAddress}
-            </p>
-          </div>
 
-          {/* Contact Us Column */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-center gap-2">
-              <Phone className="h-6 w-6 text-primary" />
-              <h3 className="text-xl font-semibold font-headline">Contact Us</h3>
-            </div>
-            <div className="text-muted-foreground text-sm text-center space-y-3">
-              {contact.split('\n').map((line, i) => (
-                line.trim() && (
-                  <p key={i} className="flex items-center justify-center gap-2">
-                    {line.includes('Phone') && <Phone className="h-4 w-4 text-primary flex-shrink-0" />}
-                    {line.includes('Email') && <Mail className="h-4 w-4 text-primary flex-shrink-0" />}
-                    <span>{line}</span>
-                  </p>
-                )
-              ))}
+            {/* Contact Us Column */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <Phone className="h-6 w-6 text-primary" />
+                <h3 className="text-xl font-semibold font-headline">Contact Us</h3>
+              </div>
+
+              {/* Admin Picture Section - First */}
+              <div className="flex justify-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center border-2 border-primary/30 overflow-hidden">
+                  <img
+                    src="/images/anand.jpg"
+                    alt="Admin Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              {/* Contact Details - Third */}
+              <div className="text-muted-foreground text-sm text-center space-y-3">
+                {contact.split('\n').map((line, i) => (
+                  line.trim() && (
+                    <p key={i} className="flex items-center justify-center gap-2">
+                      {line.includes('Phone') && <Phone className="h-4 w-4 text-primary flex-shrink-0" />}
+                      {line.includes('Email') && <Mail className="h-4 w-4 text-primary flex-shrink-0" />}
+                      <span>{line}</span>
+                    </p>
+                  )
+                ))}
+              </div>
             </div>
           </div>
         </CardContent>
