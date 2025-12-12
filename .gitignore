@@ -40,4 +40,6 @@ next-env.d.ts
 .genkit/*
 .env*
 
-# firebase logs removed
+# firebase
+firebase-debug.log
+firestore-debug.log
