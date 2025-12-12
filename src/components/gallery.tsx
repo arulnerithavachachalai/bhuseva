@@ -53,7 +53,7 @@ function ImageCarousel({ images }: { images: ImagePlaceholder[] }) {
     })
   }, [api])
 
-  // Auto-rotate carousel every 3 seconds, pause on hover
+  // Auto-rotate carousel every 3 seconds, pause only on image hover (desktop only)
   React.useEffect(() => {
     if (!api || isHovered) return
 
@@ -65,15 +65,15 @@ function ImageCarousel({ images }: { images: ImagePlaceholder[] }) {
   }, [api, isHovered])
 
   return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div>
       <Carousel setApi={setApi} className="w-full max-w-[95%] mx-auto" opts={{ loop: true }}>
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              <Card>
+              <Card
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 <CardContent className="flex aspect-video items-center justify-center p-0 relative overflow-hidden">
                   <img
                     src={image.imageUrl}
