@@ -50,7 +50,7 @@ const trustees: Trustee[] = [
     name: 'Mr. N. Senthil',
     position: 'Trustee',
     gender: 'male',
-    image: '/images/Senthil.jpg',
+    image: '/images/senthil.jpg',
   },
 ];
 
