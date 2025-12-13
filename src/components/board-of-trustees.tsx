@@ -6,16 +6,52 @@ interface Trustee {
   name: string;
   position: string;
   gender: 'male' | 'female';
+  image?: string; // optional custom image
 }
 
 const trustees: Trustee[] = [
-  { name: 'Mrs. Sheela Devi Agarwalla', position: 'President', gender: 'female' },
-  { name: 'Mr. U.A.Sakthivel', position: 'Managing Trustee', gender: 'male' },
-  { name: 'Mrs. Smriti Agarwalla', position: 'Treasurer', gender: 'female' },
-  { name: 'Mr. A. Raghav Kumar Saraf', position: 'Trustee', gender: 'male' },
-  { name: 'Mrs. Umamageswari', position: 'Trustee', gender: 'female' },
-  { name: 'Mr. Kumaraswamy Velusamy', position: 'Trustee', gender: 'male' },
-  { name: 'Mr. N. Senthil', position: 'Trustee', gender: 'male' },
+  {
+    name: 'Mrs. Sheela Devi Agarwalla',
+    position: 'President',
+    gender: 'female',
+    // image: '/images/sheela-devi.jpg',
+  },
+  {
+    name: 'Mr. U.A. Sakthivel',
+    position: 'Managing Trustee',
+    gender: 'male',
+    // image: '/images/sakthivel.jpg',
+  },
+  {
+    name: 'Mrs. Smriti Agarwalla',
+    position: 'Treasurer',
+    gender: 'female',
+    // image: '/images/Smriti.jpg',
+  },
+  {
+    name: 'Mr. A. Raghav Kumar Saraf',
+    position: 'Trustee',
+    gender: 'male',
+    // image: '/images/Raghav.jpg',
+  },
+  {
+    name: 'Mrs. Umamageswari',
+    position: 'Trustee',
+    gender: 'female',
+    // image: '/images/Umamageswari.jpg',
+  },
+  {
+    name: 'Mr. Kumaraswamy Velusamy',
+    position: 'Trustee',
+    gender: 'male',
+    // image: '/images/Kumaraswamy.jpg',
+  },
+  {
+    name: 'Mr. N. Senthil',
+    position: 'Trustee',
+    gender: 'male',
+    image: '/images/Senthil.jpg',
+  },
 ];
 
 export function BoardOfTrustees() {
@@ -24,32 +60,44 @@ export function BoardOfTrustees() {
       <div className="max-w-6xl mx-auto animate-in fade-in-0 zoom-in-95 duration-500">
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle className="text-center font-headline text-3xl">Board of Trustees</CardTitle>
+            <CardTitle className="text-center font-headline text-3xl">
+              Board of Trustees
+            </CardTitle>
           </CardHeader>
+
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-8">
-              {trustees.map((trustee, index) => (
-                <div key={index} className="space-y-4 flex flex-col items-center">
-                  {/* Trustee Image */}
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center border-2 border-primary/30 overflow-hidden">
-                    <img 
-                      src={`/images/${trustee.gender}.png`}
-                      alt={trustee.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = `/images/${trustee.gender}.png`;
-                      }}
-                    />
+            <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+              {trustees.map((trustee, index) => {
+                const fallbackImage = `/images/${trustee.gender}.png`;
+
+                return (
+                  <div
+                    key={index}
+                    className="space-y-4 flex flex-col items-center text-center"
+                  >
+                    {/* Trustee Image */}
+                    <div className="w-32 h-32 rounded-lg border-2 border-primary/30 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/10">
+                      <img
+                        src={trustee.image || fallbackImage}
+                        alt={trustee.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src =
+                            fallbackImage;
+                        }}
+                      />
+                    </div>
+
+                    {/* Trustee Name */}
+                    <p className="text-lg font-semibold">{trustee.name}</p>
+
+                    {/* Trustee Position */}
+                    <p className="text-sm font-medium text-primary">
+                      {trustee.position}
+                    </p>
                   </div>
-
-                  {/* Trustee Name */}
-                  <p className="text-lg font-semibold text-center">{trustee.name}</p>
-
-                  {/* Trustee Position */}
-                  <p className="text-sm font-medium text-primary text-center">{trustee.position}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </CardContent>
         </Card>
