@@ -18,7 +18,7 @@ export function AboutUs({ content }: AboutUsProps) {
   const hasMoreContent = lines.length > 4;
 
   return (
-    <section id="about" className="mt-12 scroll-mt-20">
+    <section id="about" className="mt-12 scroll-mt-24">
       <div className="max-w-4xl mx-auto animate-in fade-in-0 zoom-in-95 duration-500">
         <Card className="shadow-lg">
           <CardHeader>

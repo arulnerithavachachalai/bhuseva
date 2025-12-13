@@ -72,7 +72,7 @@ export default async function Home() {
 
         <BoardOfTrustees />
 
-        <section id="contact" className="mt-12">
+        <section id="contact" className="mt-12 scroll-mt-24">
           <ContactInfo address={address} contact={contact} />
         </section>
 
