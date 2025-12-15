@@ -44,7 +44,7 @@ const trustees: Trustee[] = [
     name: 'Mr. Kumaraswamy Velusamy',
     position: 'Trustee',
     gender: 'male',
-    // image: '/images/Kumaraswamy.jpg',
+    image: '/images/Kumaraswamy.png',
   },
   {
     name: 'Mr. N. Senthil',
