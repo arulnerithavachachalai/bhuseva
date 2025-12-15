@@ -20,7 +20,7 @@ const trustees: Trustee[] = [
     name: 'Mr. U.A. Sakthivel',
     position: 'Managing Trustee',
     gender: 'male',
-    // image: '/images/sakthivel.jpg',
+    image: '/images/sakthivel.png',
   },
   {
     name: 'Mrs. Smriti Agarwalla',
@@ -38,7 +38,7 @@ const trustees: Trustee[] = [
     name: 'Mrs. Umamageswari',
     position: 'Trustee',
     gender: 'female',
-    // image: '/images/Umamageswari.jpg',
+    image: '/images/Umamageswari.png',
   },
   {
     name: 'Mr. Kumaraswamy Velusamy',
